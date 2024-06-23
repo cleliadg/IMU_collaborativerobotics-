@@ -1,6 +1,4 @@
-# Description
-
-## IMU_collaborativerobotics
+# IMU_collaborativerobotics
 Welcome to the IMU_CollaborativeRobotics repository, where technology meets compassion to empower individuals with motor disabilities. Our mission? To enabling robots to mirror movements and assist in therapeutic exercises and daily tasks.
 
 ## function_pool
