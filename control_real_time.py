@@ -11,7 +11,7 @@ board = Arduino(port)
 board.digital[pin].mode = SERVO
 
 # Initialize serial communication for encoder
-ser = serial.Serial('COM3', 9600)  # Adjust COM port as necessary
+ser = serial.Serial('COM3', 9600) 
 
 # PID parameters
 max_angle = 125
@@ -20,30 +20,21 @@ kp = 0.5
 ki = 0.2
 kd = 1.0
 
-# PID control variables
 last_error = 0
 integral = 0
 
 def pid_control(setpoint, measured_value):
     global last_error, integral
     
-    # Calculate error
+    
     error = setpoint - measured_value
-    
-    # Proportional term
     P_out = kp * error
-    
-    # Integral term
-    integral += error * 0.1  # 0.1 is the time step (dt)
+    integral += error * 0.1  # 0.1 = time step (dt)
     I_out = ki * integral
-    
-    # Derivative term
     derivative = (error - last_error) / 0.1
     D_out = kd * derivative
     
-
     output = P_out + I_out + D_out
-
     last_error = error
     
     return output
@@ -62,7 +53,7 @@ while True:
     setpoint = angle_imu
     if angle is not None: 
         try:
-            # Read encoder value from serial
+            
             if ser.in_waiting > 0:
                 encoder_value = ser.readline().decode('utf-8').strip()
                 encoder_value = int(encoder_value)
