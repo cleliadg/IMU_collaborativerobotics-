@@ -17,3 +17,8 @@ This script involves recording trajectory data using an IMU (Inertial Measuremen
 
 This script implements a Proportional-Integral-Derivative controller to control a servo motor based on the angle readings from an IMU (Inertial Measurement Unit) and an encoder. The script runs in a Python environment and communicates with an Arduino board to read encoder values and control the servo motor.
 
+## min_jerk
+This script utilizes pyFirmata to control a servo motor connected to an Arduino. It generates a smooth trajectory between two positions using the minimum jerk trajectory generation method.
+
+## admittance control 
+THis script is designed to enable force-adaptive servo control using an Arduino and Python.
